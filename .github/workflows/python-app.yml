@@ -1,0 +1,97 @@
+
+
+
+
+
+# NAME OF THE WORKFLOW THAT WILL SHOW UP IN THE GITHUB ACTIONS TAB
+
+
+
+
+name: PYTHON APPLICATION
+
+
+
+
+# EVENTS THAT TRIGGER THE WORKFLOW
+
+
+
+
+on:
+
+
+
+
+  # RUN WHEN CHANGES ARE PUSHED TO THE MAIN BRANCH
+
+
+
+
+
+  push:
+    branches: [ "main" ]
+
+
+  # RUN WHEN A PULL REQUEST IS OPENED AGAINST MAIN BRANCH
+
+
+  pull_request:
+    branches: [ "main" ]
+
+
+
+# GIVE READ-ONLY ACCESS TO THE REPOSITORY CONTENT
+
+
+permissions:
+  contents: read
+
+
+
+# DEFINE THE JOB TO RUN
+
+
+jobs:
+  build:
+
+
+    # USE THE LATEST UBUNTU RUNNER
+
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+
+    # STEP 1: DOWNLOAD THE REPOSITORY CODE
+
+
+    - name: CHECK OUT REPOSITORY CODE
+      uses: actions/checkout@v4
+
+
+    # STEP 2: SET UP PYTHON 3.10 ON THE RUNNER
+
+
+    - name: SET UP PYTHON
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+
+    # STEP 3: INSTALL REQUIRED PYTHON LIBRARIES
+
+
+    - name: INSTALL DEPENDENCIES
+      run: |
+        python -m pip install --upgrade pip
+        pip install matplotlib
+
+
+    # STEP 4: RUN THE PYTHON SCRIPT
+
+    
+    - name: RUN SCRIPT
+      run: |
+        python bst_analysis.py

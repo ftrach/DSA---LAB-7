@@ -1,0 +1,115 @@
+#  BST ABD AVL ANALYSIS REPORT  
+
+
+
+
+
+
+
+
+## OVERVIEW
+
+
+
+
+
+
+
+
+In this assignment, I created BST's using random sequences of numbers from 1 to 20  ! I measured the height and imbalance of each tree, visualized the data using histograms, and applied AVL balancing to fix the unbalanced trees  .
+
+
+
+
+
+## WHAT THE CODE DOES
+
+
+
+
+
+The program builds BSTs, calculates tree height and subtree imbalance, and stores the results  .  Histograms are created using matplotlib  .  An AVL version rebalances trees using rotations  .
+
+
+
+
+
+
+## HISTOGRAM RESULTS
+
+
+
+
+
+
+- HEIGHTS mostly range from 5 to 8  
+- IMBALANCE was usually under 5, however some trees showed higher values  
+- UNBALANCED insert orders led to lopsided trees
+
+
+
+
+
+
+
+## FIXING EXAMPLE TREES WITH AVL
+
+
+
+
+
+
+
+For one example, I inserted the numbers (  1, 2, 3, 4, 5, 6, 7  ) which created a tree that leaned heavily to the right. After balancing it with AVL, the tree looked like this:
+
+
+
+
+
+
+
+
+
+        4
+      /   \
+     2     6
+    / \   / \
+   1   3 5   7
+   
+   
+
+
+
+
+
+Another example used the input (  10, 5, 2, 1, 3, 7, 6  ) This one was unbalanced on the left side at first, but AVL balancing turned it into:
+
+
+
+
+
+
+
+        5
+      /   \
+     2     7
+    / \   / \
+   1   3 6  10
+
+
+   
+
+
+   
+
+## FINAL THOUGHTS
+
+
+
+
+
+
+
+
+
+AVL balancing reduces height and improves structure, making trees more efficient than unbalanced BSTs
